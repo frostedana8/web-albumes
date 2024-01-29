@@ -9,7 +9,7 @@ const { titulo, id, artista, cover} = Astro.props
       
       <p>{artista}</p>
       <div class="card-actions justify-end">
-        <a href=`/albumes/${id}`>
+        <a href=`${import.meta.env.BASE_URL}/albumes/${id}`>
             <button class="btn btn-primary">Leer más</button>
         </a>
       </div>
