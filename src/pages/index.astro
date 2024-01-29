@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AlbumCard from '../components/AlbumCard.astro';
+import { createAlbumsObject } from '../services/spotifyData.js';
+import AlbumesJSON from '../data/albumes.json'
+
+const spotify_data = await createAlbumsObject(import.meta.env.SPOTIFY_CLIENT_ID, import.meta.env.SPOTIFY_SECRET, AlbumesJSON)
+uyjh ,---
+
+<Layout title="Review Albumes.">
+	<div class="grid-cols-1 grid lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-20 mx-auto py-20">
+		{spotify_data.map(albumes => (
+			<AlbumCard 
+				titulo={albumes.titulo} 
+				id={albumes.id}
+				artista={albumes.artista}
+				cover={albumes.cover_link}
+			/>
+		  ))}
+	</div>
+</Layout>

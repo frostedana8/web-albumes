@@ -1,0 +1,46 @@
+--- 
+import AlbumesJSON from '../../data/albumes.json';
+export async function getStaticPaths() {
+    const paths = AlbumesJSON
+    return paths.albumes.map((albumes) => {
+      return {
+        params: {id: albumes.id},
+      }
+    })
+  }
+  
+const {id} = Astro.params
+import Layout from '../../layouts/Layout.astro';
+import { createAlbumsObject } from '../../services/spotifyData.js';
+const spotify_data = await createAlbumsObject(import.meta.env.SPOTIFY_CLIENT_ID, import.meta.env.SPOTIFY_SECRET, AlbumesJSON)
+const review = spotify_data.find(album => album.id === id);
+---
+<Layout title={review.titulo}>
+    <div class="flex justify-center">
+        <img src={review.cover_link} alt="">  
+    </div>
+    <div class="flex justify-center m-10">
+        <h1 class="text-5lg">{review.titulo} |  {review.artista}</h1>  
+    </div>
+    <div class="flex justify-center m-10">
+        <h2 class="">{review.fechaReview}</h2>  
+    </div>
+    <div class="flex justify-center lg:w-1/4 lg:mx-auto m-5 text-pretty">
+        <p class="" set:html={review.review}></p> 
+    </div>
+    <div class="flex justify-center lg:mx-auto lg:w-1/4 m-10">
+        <p class="text-2lg">Puntuación: {review.nota}</p>
+    </div>
+    <div class="flex justify-center lg:mx-auto lg:w-1/4 m-10">
+        <iframe 
+            style="border-radius:12px" 
+            src=`https://open.spotify.com/embed/album/${review.link}?utm_source=generator`
+            width="100%" 
+            height="352" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+        </iframe>
+    </div>
+</Layout>../../api/spotifyData.js
