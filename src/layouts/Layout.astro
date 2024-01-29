@@ -16,10 +16,10 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<meta property="og:title" content="Review de Albumes">
 		<meta property="og:site_name" content="web-albumes">
-		<meta property="og:url" content="https://nereacassian.github.io/web-albumes/">
+		<meta property="og:url" content=`${Astro.url}`>
 		<meta property="og:description" content="">
 		<meta property="og:type" content=website>
-		<meta property="og:image" content=`${Astro.url}card.png`>
+		<meta property="og:image" content=`${Astro.url}/card.png`>
 		<title>{title}</title>
 	</head>
 	<body>
