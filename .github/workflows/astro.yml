@@ -29,7 +29,7 @@ env:
   SPOTIFY_SECRET: ${{ secrets.SPOTIFY_SECRET }}
   SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
   TURSO_DB_URL: ${{ secrets.TURSO_DB_URL }}
-  TURSO_DB_AUTH: ${{ secrets.TURSO_DB_AUTH }}
+  TURSO_DB_AUTH_TOKEN: ${{ secrets.TURSO_DB_AUTH_TOKEN }}
 
 jobs:
   build:
