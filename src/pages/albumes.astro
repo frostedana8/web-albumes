@@ -9,7 +9,15 @@ const spotify_data = await createAlbumsObject(import.meta.env.SPOTIFY_CLIENT_ID,
 
 <Layout title="Review Álbumes.">
 	<h1 class="text-4xl font-bold text-center mb-10"> Review de Álbumes</h1>
-	<p class="text-center mb-10">Reimplementación de la <a class="text-sky-700 hover:scale-105" href="https://frostedana8.github.io/albumes/">pagina de Reviews de Álbumes</a> de <a class="text-sky-700 hover:scale-105" href="https://twitter.com/lobotonanner">Nana</a></p>
+	<p class="text-center mb-10">
+		Reimplementación de la 
+		<a class="text-sky-700 hover:scale-105" href="https://frostedana8.github.io/albumes/">
+			pagina de Reviews de Álbumes
+		</a>
+		de <a class="text-sky-700 hover:scale-105" href="https://twitter.com/lobotonanner">
+			Nana
+		</a>
+	</p>
 	<div class="grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-20">
 		{spotify_data.map(albumes => (
 			<AlbumCard 
