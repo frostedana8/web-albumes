@@ -28,6 +28,8 @@ env:
   BUILD_PATH: "." # default value when not using subfolders
   SPOTIFY_SECRET: ${{ secrets.SPOTIFY_SECRET }}
   SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+  TURSO_DB_URL: ${{ secrets.TURSO_DB_URL }}
+  TURSO_DB_AUTH: ${{ secrets.TURSO_DB_AUTH }}
 
 jobs:
   build:
