@@ -25,7 +25,7 @@ async function getAccessToken(clientId, clientSecret) {
     });
   
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`HTTP error! status: ${response.status} rerty in ${response.headers.get('Retry-After')}`);
     }
   
     const data = await response.json();
