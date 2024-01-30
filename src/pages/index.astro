@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import AlbumCard from '../components/AlbumCard.astro';
 import { createAlbumsObject } from '../services/spotifyData.js';
 import AlbumesJSON from '../data/albumes.json'
-
 const spotify_data = await createAlbumsObject(import.meta.env.SPOTIFY_CLIENT_ID, import.meta.env.SPOTIFY_SECRET, AlbumesJSON)
 ---
 
