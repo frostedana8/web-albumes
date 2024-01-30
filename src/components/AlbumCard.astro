@@ -1,18 +1,17 @@
 ---
 const { titulo, id, artista, cover} = Astro.props
 ---
-<a href=`${import.meta.env.BASE_URL}/albumes/${id}`>
-  <div class="card card-compact w-96 bg-base-100 shadow-xl hover:scale-110 shadow-sky-300/10 hover:shadow-2xl hover:shadow-sky-300/75 transition-all mx-auto">
-      <figure><img src={cover} alt="Shoes" /></figure>
-      <div class="card-body">
-        <h2 class="card-title">{titulo}</h2>
-
-        <p>{artista}</p>
-        <div class="card-actions justify-end">
-          <a href=`${import.meta.env.BASE_URL}/albumes/${id}`>
-              <button class="btn btn-primary">Leer más</button>
-          </a>
-        </div>
+<div class="card card-compact w-96 bg-base-100 shadow-xl hover:scale-110 shadow-sky-300/10 hover:shadow-2xl hover:shadow-sky-300/75 transition-all mx-auto">
+  <a href=`${import.meta.env.BASE_URL}/albumes/${id}`>
+    <figure><img src={cover} alt="Shoes" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">{titulo}</h2>
+      <p>{artista}</p>
+      <div class="card-actions justify-end">
+        <a href=`${import.meta.env.BASE_URL}/albumes/${id}`>
+          <button class="btn btn-primary">Leer más</button>
+        </a>
       </div>
-  </div>
-</a>
+    </div>
+  </a>
+</div>
