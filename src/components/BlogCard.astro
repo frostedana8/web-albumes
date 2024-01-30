@@ -1,0 +1,16 @@
+---
+const { fecha, image, title, short, url} = Astro.props
+---
+<a href={url}>
+    <div class="card lg:card-side bg-base-100 shadow-xl hover:scale-110 shadow-sky-300/10 hover:shadow-2xl hover:shadow-sky-300/75 transition-all mx-auto m-10">
+        <figure><img src={image} alt="Album"/></figure>
+        <div class="card-body">
+          <h2 class="card-title">{title}</h2>
+          <h3>{fecha}</h3>
+          <p>{short}</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">leer más</button>
+          </div>
+        </div>
+    </div>
+</a>

@@ -1,6 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import BlogCard from "../components/BlogCard.astro";
+const allPosts = await Astro.glob("../pages/blog/*.md");
+
 ---
 <Layout title="Blog">
-  <h1 class="text-4xl font-bold text-center mb-10">Coming soon...</h1>
+  <h1 class="text-4xl font-bold text-center mb-10">Blog</h1>
+  <div class="m-32">
+    {allPosts.map((post) =>
+      <BlogCard 
+        fecha={post.frontmatter.pubDate} 
+        image={post.frontmatter.image.url}
+        title={post.frontmatter.title}
+        short={post.frontmatter.description}
+        url={post.url}
+      />
+    )}
+  </div>
 </Layout>
