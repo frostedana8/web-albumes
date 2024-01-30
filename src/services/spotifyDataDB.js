@@ -61,7 +61,7 @@ export async function createAlbumsObject(clientId, clientSecret, albumesJSON) {
   const albumes = albumesJSON.albumes;
   const albumsObject = [];
   const client = createClient({
-    url: import.meta.env.TURSO_DB_URL,
+    url: "libsql://nana-db-nereacassian.turso.io",
     authToken: import.meta.env.TURSO_DB_AUTH_TOKEN,
   });
 
